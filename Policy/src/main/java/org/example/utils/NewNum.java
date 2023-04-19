@@ -13,22 +13,8 @@ import java.util.List;
 public class NewNum extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int k=Integer.valueOf(req.getParameter("kind"));
-        List<Policy> Pol= (List<Policy>) req.getSession().getAttribute("Pol");
-        List<List<Policy>> policies=new ArrayList<>();
-        List<Policy> temp=new ArrayList<>();
-        for(int i=0;i< Pol.size();i++){
-            if(temp.size()<k){
-                temp.add(Pol.get(i));
-            }
-            else{
-                policies.add(temp);
-                temp=new ArrayList<>();
-                i--;
-            }
-        }
-        if(Pol.size()%k>0) policies.add(temp);
-        req.getSession().setAttribute("policies",policies);
+        int k=Integer.valueOf(req.getParameter("k"));
+        req.getSession().setAttribute("k",k);
         resp.sendRedirect("/");
     }
 

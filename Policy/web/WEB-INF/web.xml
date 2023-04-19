@@ -43,6 +43,30 @@
         <servlet-name>see</servlet-name>
         <url-pattern>/see</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>new</servlet-name>
+        <servlet-class>org.example.utils.NewNum</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>new</servlet-name>
+        <url-pattern>/new</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>sort1</servlet-name>
+        <servlet-class>org.example.utils.Sort1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sort1</servlet-name>
+        <url-pattern>/sort1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>sort2</servlet-name>
+        <servlet-class>org.example.utils.Sort2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sort2</servlet-name>
+        <url-pattern>/sort2</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>All</filter-name>
         <filter-class>org.example.utils.AllFilter</filter-class>

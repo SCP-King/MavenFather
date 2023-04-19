@@ -1,0 +1,8 @@
+# 项目排除路径
+/MavenSon2/target/
+/MavenSon3/target/
+/MavenSon4/target/
+/MavenSon5/target/
+/out/
+/Policy/target/
+/Policy/target/classes/

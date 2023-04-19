@@ -7,17 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
-public class SelectServlet extends HttpServlet {
+public class Sort2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name=req.getParameter("name");
-        String hyphen=req.getParameter("hyphen");
-        String agency=req.getParameter("agency");
-        String content=req.getParameter("content");
-        PolicySelect select=new PolicySelect();
-        List<Policy> Pol=select.select(name,hyphen,agency,content);
+        List<Policy> Pol= (List<Policy>) req.getSession().getAttribute("Pol");
         Pol.sort(new Comparator<Policy>() {
             @Override
             public int compare(Policy o1, Policy o2) {
@@ -42,6 +39,7 @@ public class SelectServlet extends HttpServlet {
         req.getSession().setAttribute("Pol",Pol);
         req.getSession().setAttribute("Num",Pol.size());
         resp.sendRedirect("/");
+
     }
 
     @Override
